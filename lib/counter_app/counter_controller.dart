@@ -1,7 +1,13 @@
 import 'package:get/get.dart';
 
 class CounterController extends GetxController {
-  int no = 1;
+  double no = 1;
+
+  void home ()
+  {
+    no = 1;
+    update();
+  }
 
   void add1() {
     no++;
@@ -25,6 +31,22 @@ class CounterController extends GetxController {
 
   void multi4() {
     no = no * 4;
+    update();
+  }
+
+  void divide2()
+  {
+    no = no / 2;
+    update();
+  }
+  void divide5()
+  {
+    no = no / 5;
+    update();
+  }
+  void divide10()
+  {
+    no = no / 10;
     update();
   }
 // void add1() {  no++  ; update();  }
