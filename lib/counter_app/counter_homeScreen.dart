@@ -40,6 +40,13 @@ class _CounterScreenState extends State<CounterScreen> {
                   IconButton(onPressed: () {controller.multi4();}, icon: Icon(Icons.four_k_outlined)),
                 ],
               ),
+              Row(mainAxisAlignment:MainAxisAlignment.spaceAround,
+                children: [
+                  TextButton(onPressed: () {controller.divide2();}, child: Text("/ 2",style: TextStyle(color: Colors.black),)),
+                  TextButton(onPressed: () {controller.divide5();}, child: Text("/ 5",style: TextStyle(color: Colors.black),)),
+                  TextButton(onPressed: () {controller.divide10();}, child: Text("/ 10",style: TextStyle(color: Colors.black),)),
+                ],
+              ),
 
 
             ],
