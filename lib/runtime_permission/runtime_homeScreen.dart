@@ -19,18 +19,25 @@ class _Permission_ScreenState extends State<Permission_Screen> {
 
   Future<void> permission()
   async {
+    if(await Permission.camera.isDenied)
+      {
+        openAppSettings();
+        //await Permission.audio.request();
+        // await Permission.camera.request();
+        // await Permission.location.request();
+        // await Permission.storage.request();
+        // Map<Permission, PermissionStatus> statuses = await [
+        //   Permission.audio,
+        //   Permission.camera,
+        //   Permission.location,
+        //   Permission.storage
+        //
+        // ].request();
+      }
 
-    Map<Permission, PermissionStatus> statuses = await [
-      Permission.audio,
-      Permission.camera,
-      Permission.location,
-      Permission.storage
 
-    ].request();
 
-    if (await Permission.camera.isPermanentlyDenied) {
-      openAppSettings();
-    }
+
 
 
   }
