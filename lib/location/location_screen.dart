@@ -66,12 +66,17 @@ class _Location_ScreenState extends State<Location_Screen> {
                     List<Placemark> placemarks = await placemarkFromCoordinates(control.lat.value, control.long.value);
 
                     control.place.value = placemarks[0];
+                    control.placeLists.value = placemarks;
 
                   }, child: Text("Find Location")),
+
+
 
                   Obx(() => Text(
                     // control.lat == 0.0 ? "" :
                     "${control.place}",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w800,color: Colors.teal),))
+
+
                 ],
               )
 
