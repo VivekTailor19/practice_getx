@@ -22,6 +22,7 @@ class _Location_ScreenState extends State<Location_Screen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          leading: Text(""),
           centerTitle: true,backgroundColor: Colors.teal,
           title: Text("Apna Location",style: TextStyle(fontWeight: FontWeight.w400,color: Colors.white,fontSize: 20),),
         ),

@@ -11,11 +11,5 @@ class LocationController extends GetxController
   RxList<Placemark> placeLists = <Placemark>[].obs;
   Rx<Placemark> place  = Placemark().obs;
 
-    //= <Placemark>;Placemark().obs;
-  // void placefind()
-  // {
-  //   place = placeLists[0];
-  // }
-
 
 }
