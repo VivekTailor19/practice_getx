@@ -21,9 +21,20 @@ class _Permission_ScreenState extends State<Permission_Screen> {
   async {
     if(await Permission.camera.isDenied)
       {
+        await Permission.camera.request();
+      }
+    else if(await Permission.camera.isPermanentlyDenied)
+      {
         openAppSettings();
+      }
+    else
+    {
+      openAppSettings();
+    }
+
+  }
+
         //await Permission.audio.request();
-        // await Permission.camera.request();
         // await Permission.location.request();
         // await Permission.storage.request();
         // Map<Permission, PermissionStatus> statuses = await [
@@ -33,14 +44,6 @@ class _Permission_ScreenState extends State<Permission_Screen> {
         //   Permission.storage
         //
         // ].request();
-      }
-
-
-
-
-
-
-  }
 
   @override
   Widget build(BuildContext context) {

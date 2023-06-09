@@ -16,7 +16,7 @@ class _RunTime_SplashState extends State<RunTime_Splash> {
   Widget build(BuildContext context) {
 
     Future.delayed(Duration(seconds: 2),() {
-      Get.toNamed("permission");
+      Get.toNamed("/permission");
     },);
 
     return SafeArea(
