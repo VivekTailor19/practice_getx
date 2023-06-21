@@ -16,7 +16,8 @@ void main() {
     Sizer(
       builder: (context, orientation, deviceType) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: "/dataTable",
+        initialRoute: "/i_align"
+            "",
         routes: {
           "/":(p0) => CounterScreen(),
           "/runtime":(p0) => RunTime_Splash(),
