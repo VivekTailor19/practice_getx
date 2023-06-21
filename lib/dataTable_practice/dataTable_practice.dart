@@ -40,25 +40,23 @@ class _DataTablePracticeState extends State<DataTablePractice> {
                 child: ListView(
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.vertical,
-                  children: [DataTable(
-                    border: TableBorder.all(width: 0.4,color: Colors.black38),
-                      headingRowColor: MaterialStateColor.resolveWith((states) => Colors.black),
-                      headingTextStyle: TextStyle(color: Colors.white,fontSize: 12.sp,fontWeight: FontWeight.w400),
-                      columns: [
-                        DataColumn(label: Text("No.")),
-                        DataColumn(label: Text("Name")),
-                        DataColumn(label: Text("Course")),
-                        DataColumn(label: Text("Duration")),
+                  children: [Obx(() => DataTable(
 
-                      ],
-                      rows: control.database.map((e) => DataRow(
-                      cells: [
-                        DataCell(Text("${e['id']}")),
-                        DataCell(Text("${e['name']}")),
-                        DataCell(Text("${e['course']}")),
-                        DataCell(Text("${e['duration']} months"),),
-                      ],
-                      ),).toList()
+                      border: TableBorder.all(width: 0.4,color: Colors.black38),
+                        headingRowColor: MaterialStateColor.resolveWith((states) => Colors.black),
+                        headingTextStyle: TextStyle(color: Colors.white,fontSize: 12.sp,fontWeight: FontWeight.w400),
+                        columns: [
+                          DataColumn(label: Text("No.")),
+                          DataColumn(label: Text("Name")),
+                          DataColumn(label: Text("Course")),
+                          DataColumn(label: Text("Duration")),
+
+                        ],
+                        rows: [
+                          for(int i=0;i<control.database.length ; i++)
+                            buildDataRow(control.database[i],i)
+                        ],
+                    ),
                   )],
                 ),
               ),
@@ -67,6 +65,30 @@ class _DataTablePracticeState extends State<DataTablePractice> {
         ),
       ),
     );
+  }
+
+  DataRow buildDataRow(Map<dynamic, dynamic> e,int index) {
+    return DataRow(
+      selected: e['isSelected'],
+                onSelectChanged: (value) {
+                  Map temp = {
+                    "id":e['id'],
+                    "name":e['name'],
+                    "course":e['course'],
+                    "duration":e['duration'],
+                    'isSelected':value
+                  };
+
+                  control.database[index] = temp;
+
+                },
+                cells: [
+                  DataCell(Text("${e['id']}")),
+                  DataCell(Text("${e['name']}")),
+                  DataCell(Text("${e['course']}")),
+                  DataCell(Text("${e['duration']} months"),),
+                ],
+                );
   }
 }
 
