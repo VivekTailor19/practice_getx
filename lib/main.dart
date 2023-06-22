@@ -7,6 +7,7 @@ import 'package:practice_getx/inplicity_animation/animation_align.dart';
 import 'package:practice_getx/location/location_screen.dart';
 import 'package:practice_getx/runtime_permission/runtime_homeScreen.dart';
 import 'package:practice_getx/runtime_permission/splashScreen.dart';
+import 'package:practice_getx/tween_animation_practice/tween_test.dart';
 import 'package:sizer/sizer.dart';
 
 import 'hero_animation/second_Screen.dart';
@@ -16,7 +17,7 @@ void main() {
     Sizer(
       builder: (context, orientation, deviceType) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: "/i_align"
+        initialRoute: "/tween"
             "",
         routes: {
           "/":(p0) => CounterScreen(),
@@ -26,7 +27,8 @@ void main() {
           "/dataTable":(p0) => DataTablePractice(),
           "/fhero":(p0) => First_Hero(),
           "/shero":(p0) => Second_Hero(),
-          "/i_align":(p0) => Animation_Align()
+          "/i_align":(p0) => Animation_Align(),
+          '/tween':(p0) => Tween_Animation_Practice()
 
 
         },
