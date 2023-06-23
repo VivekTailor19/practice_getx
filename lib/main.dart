@@ -8,6 +8,7 @@ import 'package:practice_getx/location/location_screen.dart';
 import 'package:practice_getx/runtime_permission/runtime_homeScreen.dart';
 import 'package:practice_getx/runtime_permission/splashScreen.dart';
 import 'package:practice_getx/tween2/tween2.dart';
+import 'package:practice_getx/tween2_sequence/tween2_using_tween_sequence.dart';
 import 'package:practice_getx/tween_animation_practice/tween_test.dart';
 import 'package:sizer/sizer.dart';
 
@@ -18,7 +19,7 @@ void main() {
     Sizer(
       builder: (context, orientation, deviceType) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: "/tween2"
+        initialRoute: "/tween2seq"
             "",
         routes: {
           "/":(p0) => CounterScreen(),
@@ -30,7 +31,8 @@ void main() {
           "/shero":(p0) => Second_Hero(),
           "/i_align":(p0) => Animation_Align(),
           '/tween':(p0) => Tween_Animation_Practice(),
-          "/tween2":(p0) => Tween2()
+          "/tween2":(p0) => Tween2(),
+          "/tween2seq":(p0) => Tween2_Sequence()
 
 
         },

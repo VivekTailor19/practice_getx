@@ -41,7 +41,7 @@ class _Tween2State extends State<Tween2> with SingleTickerProviderStateMixin
     alignTopR = Tween(begin: Alignment.topRight,end: Alignment.topLeft).animate(aniController!);
     alignBottomR = Tween(begin: Alignment.bottomRight,end: Alignment.topRight).animate(aniController!);
 
-    aniController!.repeat(reverse: true);
+    aniController!.repeat(reverse: false);
     aniController!.addListener(() {setState(() {
 
     });});
