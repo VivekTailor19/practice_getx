@@ -33,7 +33,7 @@ void main() {
           '/tween':(p0) => Tween_Animation_Practice(),
           "/tween2":(p0) => Tween2(),
           "/tween2seq":(p0) => Tween2_Sequence(),
-          "/draw":(p0) => Draw_CanvasScreen()
+          "/draw":(p0) => Draw_CanvasScreen(),
 
 
         },
