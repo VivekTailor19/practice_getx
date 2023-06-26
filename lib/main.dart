@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:practice_getx/canvas_paint/canvas_paint.dart';
 import 'package:practice_getx/counter_app/counter_homeScreen.dart';
 import 'package:practice_getx/dataTable_practice/dataTable_practice.dart';
 import 'package:practice_getx/hero_animation/first_Screen.dart';
@@ -19,8 +20,7 @@ void main() {
     Sizer(
       builder: (context, orientation, deviceType) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: "/tween2seq"
-            "",
+        initialRoute: "/draw",
         routes: {
           "/":(p0) => CounterScreen(),
           "/runtime":(p0) => RunTime_Splash(),
@@ -32,7 +32,8 @@ void main() {
           "/i_align":(p0) => Animation_Align(),
           '/tween':(p0) => Tween_Animation_Practice(),
           "/tween2":(p0) => Tween2(),
-          "/tween2seq":(p0) => Tween2_Sequence()
+          "/tween2seq":(p0) => Tween2_Sequence(),
+          "/draw":(p0) => Draw_CanvasScreen()
 
 
         },
